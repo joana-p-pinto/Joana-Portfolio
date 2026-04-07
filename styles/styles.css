@@ -309,7 +309,7 @@ body.theme-dark .theme-toggle .icon {
 	margin-top: auto;
 	padding-top: 12px;
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-	font-size: 24px;
+	font-size: 16px;
 	line-height: 1;
 	display: grid;
 	grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
@@ -332,6 +332,20 @@ body.theme-dark .theme-toggle .icon {
 
 .site-footer-item:last-child {
 	justify-self: start;
+}
+
+.home-page .site-footer {
+	/* Match home content geometry: title column + 52px gutter + two text columns. */
+	grid-template-columns: minmax(150px, 220px) 52px minmax(0, 1fr) 44px minmax(0, 1fr);
+	column-gap: 0;
+}
+
+.home-page .site-footer .site-footer-item:first-child {
+	grid-column: 1;
+}
+
+.home-page .site-footer .site-footer-item:last-child {
+	grid-column: 5;
 }
 
 .project-gallery-page {
@@ -591,6 +605,16 @@ body.theme-animated * {
 		gap: 18px;
 	}
 
+	.home-page .site-footer {
+		grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+		column-gap: 18px;
+	}
+
+	.home-page .site-footer .site-footer-item:first-child,
+	.home-page .site-footer .site-footer-item:last-child {
+		grid-column: auto;
+	}
+
 	.analog-gallery {
 		grid-template-columns: repeat(2, minmax(0, 1fr));
 	}
@@ -695,6 +719,15 @@ body.theme-animated * {
 		line-height: 1.2;
 		grid-template-columns: 1fr;
 		gap: 10px;
+	}
+
+	.home-page .site-footer {
+		grid-template-columns: 1fr;
+	}
+
+	.home-page .site-footer .site-footer-item:first-child,
+	.home-page .site-footer .site-footer-item:last-child {
+		grid-column: auto;
 	}
 
 	.site-footer-item {
