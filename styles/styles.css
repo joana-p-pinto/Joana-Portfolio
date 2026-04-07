@@ -311,11 +311,10 @@ body.theme-dark .theme-toggle .icon {
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 	font-size: 24px;
 	line-height: 1;
-	display: flex;
+	display: grid;
+	grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
 	align-items: baseline;
-	justify-content: space-between;
 	gap: 44px;
-	flex-wrap: wrap;
 }
 
 .filme-projeto-page .site-footer,
@@ -329,6 +328,10 @@ body.theme-dark .theme-toggle .icon {
 
 .site-footer-item {
 	white-space: nowrap;
+}
+
+.site-footer-item:last-child {
+	justify-self: start;
 }
 
 .project-gallery-page {
@@ -690,6 +693,7 @@ body.theme-animated * {
 	.site-footer {
 		font-size: 16px;
 		line-height: 1.2;
+		grid-template-columns: 1fr;
 		gap: 10px;
 	}
 
