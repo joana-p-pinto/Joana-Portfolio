@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Filmes | Joana Pinto</title>
+	<link rel="icon" type="image/png" href="../assets/icons/favicon.png">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="../styles/styles.css">
+</head>
+<body class="filmes-page">
+	<div class="page">
+		<header class="site-header filmes-header">
+			<div class="brand filmes-brand">
+				<a href="../index.html" class="brand-home-link">
+					<div class="brand-name" data-i18n-html="brand.name">Joana<br>Pinto</div>
+				</a>
+				<nav class="primary-nav">
+					<a href="filmes.html" data-i18n="nav.filmes">Filmes</a>
+					<a href="fotografia.html" data-i18n="nav.fotografia">Fotografia</a>
+					<a href="mais-projetos.html" data-i18n="nav.projetos">Mais Projetos</a>
+				</nav>
+			</div>
+			<div class="header-tools">
+				<button class="theme-toggle" type="button" aria-label="Toggle theme" data-theme-toggle>
+					<img src="../assets/icons/sun.png" alt="" class="icon icon-sun" aria-hidden="true">
+					<img src="../assets/icons/moon.png" alt="" class="icon icon-moon" aria-hidden="true">
+				</button>
+				<button class="lang-toggle" type="button" data-lang-toggle>PT<span aria-hidden="true">&bull;</span>EN</button>
+			</div>
+		</header>
+
+		<main class="films-list" id="filmes">
+			<h1 class="films-list-title" data-i18n="filmes.title">Filmes</h1>
+			<article class="film-row">
+				<img src="../assets/images/placeholder1.jpg" alt="Film still" class="film-thumb" loading="lazy" decoding="async">
+				<h2 class="film-name" data-i18n="filmes.item1.name">Nome</h2>
+				<p class="film-copy" data-i18n="filmes.item1.copy">
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor
+					incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+					exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+				</p>
+			</article>
+
+			<article class="film-row">
+				<img src="../assets/images/placeholder2.jpg" alt="Film still" class="film-thumb" loading="lazy" decoding="async">
+				<h2 class="film-name" data-i18n="filmes.item2.name">Nome</h2>
+				<p class="film-copy" data-i18n="filmes.item2.copy">
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor
+					incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+					exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+				</p>
+			</article>
+
+			<article class="film-row">
+				<img src="../assets/images/placeholder3.jpg" alt="Film still" class="film-thumb" loading="lazy" decoding="async">
+				<h2 class="film-name" data-i18n="filmes.item3.name">Nome</h2>
+				<p class="film-copy" data-i18n="filmes.item3.copy">
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor
+					incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+					exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+				</p>
+			</article>
+		</main>
+	</div>
+	<script src="../js/main.js"></script>
+</body>
+</html>
