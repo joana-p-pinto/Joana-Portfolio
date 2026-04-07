@@ -13,6 +13,13 @@
 	--accent: #0d0d0d;
 	--border: rgba(10, 10, 10, 0.12);
 	--max-width: 1160px;
+	--theme-transition: 220ms ease-in-out;
+	--rule-thickness: 4px;
+}
+
+html.theme-no-transition,
+html.theme-no-transition * {
+	transition: none !important;
 }
 
 body {
@@ -20,11 +27,13 @@ body {
 	color: var(--ink);
 	background: var(--bg);
 	min-height: 100vh;
+	display: flex;
 	line-height: 1.6;
-	transition: background-color 320ms ease, color 320ms ease;
+	transition: background-color var(--theme-transition), color var(--theme-transition);
 }
 
-body.theme-dark {
+body.theme-dark,
+html.theme-dark body {
 	--bg: #121110;
 	--ink: #ededed;
 	--ink-muted: #d4d4d4;
@@ -34,7 +43,11 @@ body.theme-dark {
 .page {
 	max-width: none;
 	margin: 0;
-	padding: 24px 34px 96px;
+	padding: 24px 34px 24px;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
 }
 
 .site-header {
@@ -52,10 +65,12 @@ body.theme-dark {
 
 .brand-name {
 	font-family: "Instrument Serif", "Times New Roman", serif;
-	font-size: 50px;
+	font-size: 62px;
 	line-height: 0.8;
 	letter-spacing: -0.7px;
 	font-style: italic;
+	position: relative;
+	top: 2px;
 }
 
 .primary-nav {
@@ -82,7 +97,7 @@ body.theme-dark {
 .header-tools {
 	display: flex;
 	align-items: center;
-	gap: 20px;
+	gap: 44px;
 }
 
 .theme-toggle {
@@ -172,7 +187,7 @@ body.theme-dark .theme-toggle .icon {
 
 .about h1 {
 	font-family: "Instrument Serif", "Times New Roman", serif;
-	font-size: 36px;
+	font-size: 44px;
 	font-weight: 400;
 }
 
@@ -181,7 +196,7 @@ body.theme-dark .theme-toggle .icon {
 	grid-template-columns: repeat(2, minmax(0, 1fr));
 	gap: 44px;
 	color: var(--ink-muted);
-	font-size: 16px;
+	font-size: 19px;
 }
 
 .about-column {
@@ -218,7 +233,7 @@ body.theme-dark .theme-toggle .icon {
 
 .films-list {
 	margin-top: 106px;
-	border-bottom: 2px solid var(--ink);
+	border-bottom: 0;
 }
 
 .films-list-title {
@@ -227,16 +242,16 @@ body.theme-dark .theme-toggle .icon {
 	font-style: italic;
 	font-weight: 400;
 	line-height: 0.9;
-	margin-bottom: 22px;
+	margin-bottom: 12px;
 }
 
 .film-row {
 	display: grid;
 	grid-template-columns: 270px minmax(120px, 160px) minmax(280px, 540px);
-	gap: 16px;
+	gap: 24px;
 	align-items: start;
 	padding: 13px 0;
-	border-bottom: 2px solid var(--ink);
+	border-bottom: var(--rule-thickness) solid var(--ink);
 }
 
 .film-row:last-child {
@@ -247,7 +262,6 @@ body.theme-dark .theme-toggle .icon {
 	width: 100%;
 	height: 176px;
 	object-fit: cover;
-	filter: grayscale(100%);
 }
 
 .film-name {
@@ -257,25 +271,228 @@ body.theme-dark .theme-toggle .icon {
 	line-height: 1;
 }
 
+.project-title-group {
+	display: flex;
+	flex-direction: column;
+	gap: 2px;
+}
+
+.project-subtitle {
+	font-family: "Instrument Serif", "Times New Roman", serif;
+	font-size: 24px;
+	font-style: italic;
+	font-weight: 400;
+	line-height: 1.05;
+}
+
+.film-name-link {
+	color: inherit;
+	text-decoration: none;
+}
+
+.film-name-link:hover,
+.film-name-link:focus {
+	text-decoration: underline;
+}
+
 .film-copy {
 	font-size: 16px;
 	line-height: 1.2;
 	font-weight: 400;
 	letter-spacing: 0;
 	max-width: 340px;
-	margin-left: 170px;
+	margin-left: 220px;
 }
 
-.primary-nav a,
-.lang-toggle,
-.about h1,
-.about-columns,
-.films-list,
-.films-list-title,
-.film-row,
-.film-name,
-.film-copy {
-	transition: color 360ms ease, border-color 360ms ease, background-color 360ms ease;
+.site-footer {
+	border-top: var(--rule-thickness) solid var(--ink);
+	margin-top: auto;
+	padding-top: 12px;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 24px;
+	line-height: 1;
+	display: flex;
+	align-items: baseline;
+	justify-content: space-between;
+	gap: 44px;
+	flex-wrap: wrap;
+}
+
+.filme-projeto-page .site-footer,
+.home-page .site-footer {
+	padding-top: 16px;
+}
+
+.filme-projeto-page main {
+	padding-bottom: 84px;
+}
+
+.site-footer-item {
+	white-space: nowrap;
+}
+
+.project-gallery-page {
+	margin-top: 72px;
+}
+
+.analogicos-page .films-list-title {
+	margin-bottom: 34px;
+}
+
+.film-project-page {
+	margin-top: 72px;
+}
+
+.film-project-page .film-detail {
+	margin-top: 0;
+	padding-top: 0;
+	border-top: 0;
+}
+
+.film-detail {
+	margin-top: 42px;
+	padding-top: 10px;
+	border-top: var(--rule-thickness) solid var(--ink);
+}
+
+.film-detail-hero {
+	width: 100%;
+	max-height: 72vh;
+	object-fit: cover;
+	display: block;
+}
+
+.film-detail-meta {
+	margin-top: 22px;
+	display: grid;
+	grid-template-columns: minmax(200px, 260px) minmax(0, 560px);
+	gap: 20px;
+	align-items: start;
+}
+
+.film-detail-title {
+	font-family: "Instrument Serif", "Times New Roman", serif;
+	font-size: 48px;
+	font-weight: 400;
+	line-height: 1;
+}
+
+.film-detail-copy {
+	font-size: 22px;
+	line-height: 1.2;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	max-width: 560px;
+}
+
+.film-detail-thumbs {
+	margin-top: 30px;
+	display: grid;
+	grid-template-columns: repeat(4, minmax(0, 1fr));
+	gap: 16px;
+}
+
+.film-thumb-button {
+	display: block;
+	padding: 0;
+	border: 0;
+	background: transparent;
+	cursor: pointer;
+	opacity: 0.88;
+}
+
+.film-thumb-button.is-active {
+	opacity: 1;
+	outline: 2px solid var(--ink);
+	outline-offset: 2px;
+}
+
+.film-thumb-preview {
+	width: 100%;
+	aspect-ratio: 16 / 9;
+	object-fit: cover;
+	display: block;
+}
+
+.film-detail-preview-wrap {
+	margin-top: 16px;
+	max-width: min(760px, 100%);
+}
+
+.film-detail-preview {
+	width: 100%;
+	aspect-ratio: 16 / 9;
+	object-fit: cover;
+	display: block;
+}
+
+.analog-gallery {
+	display: grid;
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+	gap: 14px;
+}
+
+.gallery-image {
+	width: 100%;
+	aspect-ratio: 4 / 3;
+	object-fit: cover;
+	cursor: default;
+}
+
+.analog-gallery .gallery-image {
+	cursor: zoom-in;
+}
+
+.lightbox {
+	position: fixed;
+	inset: 0;
+	background: rgba(0, 0, 0, 0.9);
+	display: none;
+	align-items: center;
+	justify-content: center;
+	z-index: 9999;
+	padding: 28px;
+}
+
+.lightbox.is-open {
+	display: flex;
+}
+
+.lightbox-image {
+	max-width: min(1200px, 90vw);
+	max-height: 88vh;
+	object-fit: contain;
+	box-shadow: 0 20px 80px rgba(0, 0, 0, 0.5);
+}
+
+.lightbox-control {
+	position: absolute;
+	border: 0;
+	background: transparent;
+	color: #fff;
+	font-size: 40px;
+	line-height: 1;
+	padding: 0;
+	cursor: pointer;
+	text-shadow: 0 2px 10px rgba(0, 0, 0, 0.55);
+}
+
+.lightbox-control.prev {
+	left: 16px;
+}
+
+.lightbox-control.next {
+	right: 16px;
+}
+
+.lightbox-control.close {
+	top: 14px;
+	right: 14px;
+	font-size: 34px;
+}
+
+body.theme-animated,
+body.theme-animated * {
+	transition: color var(--theme-transition), border-color var(--theme-transition), background-color var(--theme-transition), opacity var(--theme-transition), outline-color var(--theme-transition);
 }
 
 @media (max-width: 900px) {
@@ -306,17 +523,31 @@ body.theme-dark .theme-toggle .icon {
 		gap: 32px;
 	}
 
+	.about h1 {
+		font-size: 38px;
+	}
+
 	.about-columns {
 		grid-template-columns: 1fr 1fr;
 		gap: 34px;
+		font-size: 17px;
 	}
 
 	.films-list {
 		margin-top: 78px;
 	}
 
+	.film-project-page,
+	.project-gallery-page {
+		margin-top: 58px;
+	}
+
 	.films-list-title {
 		font-size: 40px;
+	}
+
+	.project-subtitle {
+		font-size: 22px;
 	}
 
 	.film-row {
@@ -327,15 +558,38 @@ body.theme-dark .theme-toggle .icon {
 		height: 160px;
 	}
 
-	.film-name {
-		font-size: 42px;
-	}
-
 	.film-copy {
 		font-size: 15px;
 		max-width: 300px;
-		margin-left: 88px;
+		margin-left: 130px;
 		line-height: 1.2;
+	}
+
+	.film-detail-title {
+		font-size: 42px;
+	}
+
+	.film-detail-copy {
+		font-size: 18px;
+		max-width: 100%;
+	}
+
+	.film-detail-meta {
+		grid-template-columns: 1fr;
+		gap: 12px;
+	}
+
+	.film-detail-thumbs {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+
+	.site-footer {
+		font-size: 20px;
+		gap: 18px;
+	}
+
+	.analog-gallery {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
 	}
 }
 
@@ -362,6 +616,14 @@ body.theme-dark .theme-toggle .icon {
 		max-width: none;
 	}
 
+	.about h1 {
+		font-size: 34px;
+	}
+
+	.about-columns {
+		font-size: 16px;
+	}
+
 	.page-title {
 		font-size: 44px;
 	}
@@ -374,9 +636,18 @@ body.theme-dark .theme-toggle .icon {
 		margin-top: 62px;
 	}
 
+	.film-project-page,
+	.project-gallery-page {
+		margin-top: 44px;
+	}
+
 	.films-list-title {
 		font-size: 36px;
 		margin-bottom: 8px;
+	}
+
+	.project-subtitle {
+		font-size: 18px;
 	}
 
 	.film-row {
@@ -397,5 +668,41 @@ body.theme-dark .theme-toggle .icon {
 		max-width: none;
 		margin-left: 0;
 		line-height: 1.15;
+	}
+
+	.film-detail {
+		margin-top: 26px;
+	}
+
+	.film-detail-title {
+		font-size: 38px;
+	}
+
+	.film-detail-copy {
+		font-size: 16px;
+		line-height: 1.2;
+	}
+
+	.film-detail-thumbs {
+		grid-template-columns: 1fr;
+	}
+
+	.site-footer {
+		font-size: 16px;
+		line-height: 1.2;
+		gap: 10px;
+	}
+
+	.site-footer-item {
+		white-space: normal;
+	}
+
+	.analog-gallery {
+		grid-template-columns: 1fr;
+	}
+
+	.lightbox-control {
+		font-size: 28px;
+		padding: 8px 10px;
 	}
 }

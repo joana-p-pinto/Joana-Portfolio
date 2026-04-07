@@ -3,6 +3,13 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script>
+		(() => {
+			const stored = localStorage.getItem("joana-theme");
+			const dark = stored ? stored === "dark" : window.matchMedia("(prefers-color-scheme: dark)").matches;
+			if (dark) document.documentElement.classList.add("theme-dark");
+		})();
+	</script>
 	<title>Filmes | Joana Pinto</title>
 	<link rel="icon" type="image/png" href="../assets/icons/favicon.png">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
@@ -21,6 +28,7 @@
 					<a href="filmes.html" data-i18n="nav.filmes">Filmes</a>
 					<a href="fotografia.html" data-i18n="nav.fotografia">Fotografia</a>
 					<a href="mais-projetos.html" data-i18n="nav.projetos">Mais Projetos</a>
+					<a href="#" data-cv-download data-i18n="nav.cv">CV</a>
 				</nav>
 			</div>
 			<div class="header-tools">
@@ -36,7 +44,10 @@
 			<h1 class="films-list-title" data-i18n="filmes.title">Filmes</h1>
 			<article class="film-row">
 				<img src="../assets/images/placeholder1.jpg" alt="Film still" class="film-thumb" loading="lazy" decoding="async">
-				<h2 class="film-name" data-i18n="filmes.item1.name">Nome</h2>
+				<div class="project-title-group">
+					<h2 class="film-name"><a href="filme-projeto-1.html" class="film-name-link" data-i18n="filmes.item1.name">Nome</a></h2>
+					<p class="project-subtitle">Jona Pinto</p>
+				</div>
 				<p class="film-copy" data-i18n="filmes.item1.copy">
 					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor
 					incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
@@ -46,7 +57,10 @@
 
 			<article class="film-row">
 				<img src="../assets/images/placeholder2.jpg" alt="Film still" class="film-thumb" loading="lazy" decoding="async">
-				<h2 class="film-name" data-i18n="filmes.item2.name">Nome</h2>
+				<div class="project-title-group">
+					<h2 class="film-name"><a href="filme-projeto-2.html" class="film-name-link" data-i18n="filmes.item2.name">Nome</a></h2>
+					<p class="project-subtitle">Jona Pinto</p>
+				</div>
 				<p class="film-copy" data-i18n="filmes.item2.copy">
 					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor
 					incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
@@ -56,14 +70,22 @@
 
 			<article class="film-row">
 				<img src="../assets/images/placeholder3.jpg" alt="Film still" class="film-thumb" loading="lazy" decoding="async">
-				<h2 class="film-name" data-i18n="filmes.item3.name">Nome</h2>
+				<div class="project-title-group">
+					<h2 class="film-name"><a href="filme-projeto-3.html" class="film-name-link" data-i18n="filmes.item3.name">Nome</a></h2>
+					<p class="project-subtitle">Jona Pinto</p>
+				</div>
 				<p class="film-copy" data-i18n="filmes.item3.copy">
 					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor
 					incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
 					exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 				</p>
 			</article>
+
 		</main>
+		<footer class="site-footer">
+			<p class="site-footer-item">joanapinto.mpp@gmail.com</p>
+			<p class="site-footer-item">Instagram • @joana.ppinto</p>
+		</footer>
 	</div>
 	<script src="../js/main.js"></script>
 </body>
