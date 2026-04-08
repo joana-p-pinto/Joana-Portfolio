@@ -397,6 +397,13 @@ body.theme-dark .theme-toggle .icon {
 	display: block;
 }
 
+.film-detail-video {
+	width: 100%;
+	aspect-ratio: 16 / 9;
+	border: 0;
+	display: block;
+}
+
 .film-detail-meta {
 	margin-top: 22px;
 	display: grid;
