@@ -490,7 +490,8 @@ html.theme-dark .home-page .about-columns {
 }
 
 .film-detail-copy[data-i18n-html="filmes.item1.copy.col2"],
-.film-detail-copy[data-i18n-html="filmes.item2.copy.col2"] {
+.film-detail-copy[data-i18n-html="filmes.item2.copy.col2"],
+.film-detail-copy[data-i18n-html="filmes.item3.copy.col2"] {
 	display: flex;
 	flex-direction: column;
 	height: 100%;
