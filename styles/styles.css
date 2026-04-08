@@ -457,7 +457,7 @@ html.theme-dark .home-page .about-columns {
 }
 
 .film-detail-meta {
-	margin-top: 22px;
+	margin-top: 44px;
 	display: grid;
 	grid-template-columns: minmax(140px, 210px) minmax(0, 1fr);
 	gap: 14px;
@@ -505,7 +505,7 @@ html.theme-dark .home-page .about-columns {
 }
 
 .film-detail-capa-wrap {
-	margin-top: 26px;
+	margin-top: 44px;
 	width: 68%;
 	max-width: 920px;
 }
