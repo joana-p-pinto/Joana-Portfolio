@@ -219,7 +219,46 @@ function initLightbox() {
 	});
 }
 
+function initBackToTop() {
+	const button = document.createElement("button");
+	const darkArrowSrc = getAssetPath("icons/setapreta.png");
+	const lightArrowSrc = getAssetPath("icons/setabranca.png");
+	const footer = document.querySelector(".site-footer");
+	button.className = "back-to-top";
+	button.type = "button";
+	button.setAttribute("aria-label", "Scroll to top");
+	button.setAttribute("title", "Scroll to top");
+	button.innerHTML = `
+		<img src="${darkArrowSrc}" alt="" class="back-to-top-icon dark" aria-hidden="true">
+		<img src="${lightArrowSrc}" alt="" class="back-to-top-icon light" aria-hidden="true">
+	`;
+	document.body.appendChild(button);
+
+	function updateVisibility() {
+		const shouldShow = window.scrollY > 320;
+		button.classList.toggle("is-visible", shouldShow);
+
+		const baseBottom = window.matchMedia("(max-width: 640px)").matches ? 16 : 22;
+		let overlapOffset = 0;
+		if (footer) {
+			const footerTop = footer.getBoundingClientRect().top;
+			overlapOffset = Math.max(0, window.innerHeight - footerTop + 12);
+		}
+
+		button.style.bottom = `${baseBottom + overlapOffset}px`;
+	}
+
+	button.addEventListener("click", () => {
+		window.scrollTo({ top: 0, behavior: "smooth" });
+	});
+
+	window.addEventListener("scroll", updateVisibility, { passive: true });
+	window.addEventListener("resize", updateVisibility);
+	updateVisibility();
+}
+
 loadDictionaries();
 updateLangButtonLabel(currentLang);
 updateCvDownloadLink(currentLang);
 initLightbox();
+initBackToTop();
