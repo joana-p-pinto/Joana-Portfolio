@@ -69,7 +69,7 @@ function updateLangButtonLabel(lang) {
 }
 
 function updateCvDownloadLink(lang) {
-	const fileName = lang === "en" ? "joana-pinto-cv-en.pdf" : "joana-pinto-cv-pt.pdf";
+	const fileName = lang === "en" ? "JoanaPintoEN.pdf" : "JoanaPintoPT.pdf";
 	const filePath = getAssetPath(`cv/${fileName}`);
 
 	cvDownloadLinks.forEach((link) => {
