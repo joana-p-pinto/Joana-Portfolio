@@ -210,7 +210,11 @@ body.theme-dark .theme-toggle .icon {
 }
 
 body.theme-dark .home-page .about-columns {
-	color: var(--ink);
+	color: var(--ink-muted);
+}
+
+html.theme-dark .home-page .about-columns {
+	color: var(--ink-muted);
 }
 
 .home-page .about-column {
