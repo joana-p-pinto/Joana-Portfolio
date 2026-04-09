@@ -132,8 +132,8 @@ languageToggleButtons.forEach((button) => {
 });
 
 function initLightbox() {
-	const galleryImages = Array.from(document.querySelectorAll("[data-gallery-image]"));
-	if (!galleryImages.length) {
+	const galleryItems = Array.from(document.querySelectorAll("[data-gallery-image], [data-gallery-video]"));
+	if (!galleryItems.length) {
 		return;
 	}
 
@@ -141,53 +141,95 @@ function initLightbox() {
 	overlay.className = "lightbox";
 	overlay.setAttribute("aria-hidden", "true");
 	overlay.innerHTML = `
-		<button class="lightbox-control prev" type="button" aria-label="Previous image">&#8592;</button>
+		<button class="lightbox-control prev" type="button" aria-label="Previous item">&#8592;</button>
 		<img class="lightbox-image" alt="">
-		<button class="lightbox-control next" type="button" aria-label="Next image">&#8594;</button>
+		<video class="lightbox-video" controls playsinline></video>
+		<div class="lightbox-empty" aria-live="polite">Video coming soon</div>
+		<button class="lightbox-control next" type="button" aria-label="Next item">&#8594;</button>
 		<button class="lightbox-control close" type="button" aria-label="Close">&times;</button>
 	`;
 	document.body.appendChild(overlay);
 
 	const lightboxImage = overlay.querySelector(".lightbox-image");
+	const lightboxVideo = overlay.querySelector(".lightbox-video");
+	const lightboxEmpty = overlay.querySelector(".lightbox-empty");
 	const prevButton = overlay.querySelector(".lightbox-control.prev");
 	const nextButton = overlay.querySelector(".lightbox-control.next");
 	const closeButton = overlay.querySelector(".lightbox-control.close");
 
 	let activeIndex = 0;
 
-	function showImage(index) {
-		const normalizedIndex = (index + galleryImages.length) % galleryImages.length;
+	function resetMediaState() {
+		lightboxImage.style.display = "none";
+		lightboxVideo.style.display = "none";
+		lightboxEmpty.style.display = "none";
+		lightboxVideo.pause();
+		lightboxVideo.removeAttribute("src");
+		lightboxVideo.removeAttribute("poster");
+	}
+
+	function showItem(index) {
+		const normalizedIndex = (index + galleryItems.length) % galleryItems.length;
 		activeIndex = normalizedIndex;
-		const sourceImage = galleryImages[activeIndex];
-		lightboxImage.src = sourceImage.currentSrc || sourceImage.src;
-		lightboxImage.alt = sourceImage.alt || "";
+		const sourceItem = galleryItems[activeIndex];
+		const isVideo = sourceItem.hasAttribute("data-gallery-video");
+
+		resetMediaState();
+
+		if (!isVideo) {
+			lightboxImage.src = sourceItem.currentSrc || sourceItem.src;
+			lightboxImage.alt = sourceItem.alt || "";
+			lightboxImage.style.display = "block";
+			return;
+		}
+
+		const videoSrc = sourceItem.dataset.videoSrc || "";
+		const videoPoster = sourceItem.dataset.videoPoster || "";
+		const videoTitle = sourceItem.dataset.videoTitle || sourceItem.getAttribute("aria-label") || "Video";
+
+		if (!videoSrc) {
+			lightboxEmpty.textContent = `${videoTitle} coming soon`;
+			lightboxEmpty.style.display = "flex";
+			return;
+		}
+
+		lightboxVideo.src = videoSrc;
+		if (videoPoster) {
+			lightboxVideo.poster = videoPoster;
+		}
+		lightboxVideo.setAttribute("aria-label", videoTitle);
+		lightboxVideo.autoplay = false;
+		lightboxVideo.muted = false;
+		lightboxVideo.style.display = "block";
+		lightboxVideo.load();
 	}
 
 	function openLightbox(index) {
-		showImage(index);
+		showItem(index);
 		overlay.classList.add("is-open");
 		overlay.setAttribute("aria-hidden", "false");
 		document.body.style.overflow = "hidden";
 	}
 
 	function closeLightbox() {
+		resetMediaState();
 		overlay.classList.remove("is-open");
 		overlay.setAttribute("aria-hidden", "true");
 		document.body.style.overflow = "";
 	}
 
-	galleryImages.forEach((image, index) => {
-		image.addEventListener("click", () => {
+	galleryItems.forEach((item, index) => {
+		item.addEventListener("click", () => {
 			openLightbox(index);
 		});
 	});
 
 	prevButton.addEventListener("click", () => {
-		showImage(activeIndex - 1);
+		showItem(activeIndex - 1);
 	});
 
 	nextButton.addEventListener("click", () => {
-		showImage(activeIndex + 1);
+		showItem(activeIndex + 1);
 	});
 
 	closeButton.addEventListener("click", closeLightbox);
@@ -209,12 +251,12 @@ function initLightbox() {
 		}
 
 		if (event.key === "ArrowLeft") {
-			showImage(activeIndex - 1);
+			showItem(activeIndex - 1);
 			return;
 		}
 
 		if (event.key === "ArrowRight") {
-			showImage(activeIndex + 1);
+			showItem(activeIndex + 1);
 		}
 	});
 }
@@ -257,8 +299,34 @@ function initBackToTop() {
 	updateVisibility();
 }
 
+function initVideoPreviewFrames() {
+	const previewVideos = Array.from(document.querySelectorAll("video[data-preview-at]"));
+	if (!previewVideos.length) {
+		return;
+	}
+
+	previewVideos.forEach((video) => {
+		const previewAt = Number(video.dataset.previewAt);
+		if (!Number.isFinite(previewAt) || previewAt < 0) {
+			return;
+		}
+
+		const seekToPreviewFrame = () => {
+			video.currentTime = previewAt;
+		};
+
+		if (video.readyState >= 1) {
+			seekToPreviewFrame();
+			return;
+		}
+
+		video.addEventListener("loadedmetadata", seekToPreviewFrame, { once: true });
+	});
+}
+
 loadDictionaries();
 updateLangButtonLabel(currentLang);
 updateCvDownloadLink(currentLang);
 initLightbox();
 initBackToTop();
+initVideoPreviewFrames();
