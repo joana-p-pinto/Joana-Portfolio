@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script>
+		(() => {
+			const stored = localStorage.getItem("joana-theme");
+			const dark = stored ? stored === "dark" : window.matchMedia("(prefers-color-scheme: dark)").matches;
+			if (dark) document.documentElement.classList.add("theme-dark");
+		})();
+	</script>
+	<title>Falcon Quest | Joana Pinto</title>
+	<link rel="icon" type="image/png" href="../assets/icons/favicon.png">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="../styles/styles.css">
+</head>
+<body class="falcon-quest-page">
+	<div class="page">
+		<header class="site-header filmes-header">
+			<div class="brand filmes-brand">
+				<a href="../index.html" class="brand-home-link">
+					<div class="brand-name" data-i18n-html="brand.name">Joana<br>Pinto</div>
+				</a>
+				<nav class="primary-nav">
+					<a href="filmes.html" data-i18n="nav.filmes">Filmes</a>
+					<a href="fotografia.html" data-i18n="nav.fotografia">Fotografia</a>
+					<a href="mais-projetos.html" data-i18n="nav.projetos">Mais Projetos</a>
+					<a href="#" data-cv-download data-i18n="nav.cv">CV</a>
+				</nav>
+			</div>
+			<div class="header-tools">
+				<button class="theme-toggle" type="button" aria-label="Toggle theme" data-theme-toggle>
+					<img src="../assets/icons/sun.png" alt="" class="icon icon-sun" aria-hidden="true">
+					<img src="../assets/icons/moon.png" alt="" class="icon icon-moon" aria-hidden="true">
+				</button>
+				<button class="lang-toggle" type="button" data-lang-toggle>PT<span aria-hidden="true">&bull;</span>EN</button>
+			</div>
+		</header>
+
+		<main class="project-gallery-page" id="falcon-quest">
+			<h1 class="films-list-title">Falcon Quest</h1>
+			<div class="project-copy-columns">
+				<p class="project-copy" data-i18n="falcon.copy.col1">
+					Neste photobook pretendo explorar a intensa relação que Pedro Oliveira tem com o mar. Relação de tal intensidade que para além de viver o mar, tendo velejado por diferentes partes do mundo e competindo em regatas todos os meses com o seu barco Falcon Quest, também vive no mar... no seu barco, que para ele lhe trás mais conforto do que qualquer casa.
+				</p>
+				<p class="project-copy" data-i18n-html="falcon.copy.col2">
+					Para Pedro, dormir no barco é como quando era criança e adormecia nos braços da mãe... para ele "é o mesmo balançar".
+				</p>
+			</div>
+			<section class="analog-gallery">
+				<img src="../assets/images/falconquest/1.jpg" alt="Falcon Quest 1" class="gallery-image" data-gallery-image loading="lazy" decoding="async">
+				<img src="../assets/images/falconquest/2.jpg" alt="Falcon Quest 2" class="gallery-image" data-gallery-image loading="lazy" decoding="async">
+				<img src="../assets/images/falconquest/3.jpg" alt="Falcon Quest 3" class="gallery-image" data-gallery-image loading="lazy" decoding="async">
+				<img src="../assets/images/falconquest/4.jpg" alt="Falcon Quest 4" class="gallery-image" data-gallery-image loading="lazy" decoding="async">
+				<img src="../assets/images/falconquest/5.jpg" alt="Falcon Quest 5" class="gallery-image" data-gallery-image loading="lazy" decoding="async">
+				<img src="../assets/images/falconquest/6.jpg" alt="Falcon Quest 6" class="gallery-image" data-gallery-image loading="lazy" decoding="async">
+				<img src="../assets/images/falconquest/7.jpg" alt="Falcon Quest 7" class="gallery-image" data-gallery-image loading="lazy" decoding="async">
+				<img src="../assets/images/falconquest/8.jpg" alt="Falcon Quest 8" class="gallery-image" data-gallery-image loading="lazy" decoding="async">
+				<img src="../assets/images/falconquest/9.jpg" alt="Falcon Quest 9" class="gallery-image" data-gallery-image loading="lazy" decoding="async">
+				<img src="../assets/images/falconquest/10.jpg" alt="Falcon Quest 10" class="gallery-image" data-gallery-image loading="lazy" decoding="async">
+				<img src="../assets/images/falconquest/11.jpg" alt="Falcon Quest 11" class="gallery-image" data-gallery-image loading="lazy" decoding="async">
+				<img src="../assets/images/falconquest/12.jpg" alt="Falcon Quest 12" class="gallery-image" data-gallery-image loading="lazy" decoding="async">
+				<img src="../assets/images/falconquest/13.jpg" alt="Falcon Quest 13" class="gallery-image" data-gallery-image loading="lazy" decoding="async">
+				<img src="../assets/images/falconquest/14.jpg" alt="Falcon Quest 14" class="gallery-image" data-gallery-image loading="lazy" decoding="async">
+				<img src="../assets/images/falconquest/15.jpg" alt="Falcon Quest 15" class="gallery-image" data-gallery-image loading="lazy" decoding="async">
+				<img src="../assets/images/falconquest/16.jpg" alt="Falcon Quest 16" class="gallery-image" data-gallery-image loading="lazy" decoding="async">
+				<img src="../assets/images/falconquest/17.jpg" alt="Falcon Quest 17" class="gallery-image" data-gallery-image loading="lazy" decoding="async">
+				<img src="../assets/images/falconquest/18.jpg" alt="Falcon Quest 18" class="gallery-image" data-gallery-image loading="lazy" decoding="async">
+				<img src="../assets/images/falconquest/19.jpg" alt="Falcon Quest 19" class="gallery-image" data-gallery-image loading="lazy" decoding="async">
+				<img src="../assets/images/falconquest/20.jpg" alt="Falcon Quest 20" class="gallery-image" data-gallery-image loading="lazy" decoding="async">
+				<img src="../assets/images/falconquest/21.jpg" alt="Falcon Quest 21" class="gallery-image" data-gallery-image loading="lazy" decoding="async">
+			</section>
+		</main>
+		<footer class="site-footer">
+			<p class="site-footer-item">Email • joanapinto.mpp@gmail.com</p>
+			<p class="site-footer-item">Instagram • @joana.ppinto</p>
+		</footer>
+	</div>
+	<script src="../js/main.js"></script>
+</body>
+</html>

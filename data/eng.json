@@ -30,11 +30,11 @@
 	"fotografia.title": "Photography",
 	"fotografia.subtitle": "Frames between daily life and the fleeting moment.",
 	"fotografia.item1.name": "Analógico",
-	"fotografia.item1.copy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+	"fotografia.item1.copy": "Photography has the power to make moments last. Shooting on film forces me to slow down, to be more present, more aware of the world around me. This selection reflects my interest in the everyday and the small moments - the ones we so often walk past. The ones I believe deserve more attention.",
 	"fotografia.item2.name": "Falcon Quest",
-	"fotografia.item2.copy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+	"fotografia.item2.copy": "A boat trip that explores the bond between man and the sea.",
 	"fotografia.item3.name": "Porto Design Biennale",
-	"fotografia.item3.copy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+	"fotografia.item3.copy": "Time is Present. Designing the Common.",
 	"projetos.title": "More Projects",
 	"projetos.subtitle": "Additional creative explorations and collaborations.",
 	"projetos.item1.name": "T1 Jams",
@@ -44,5 +44,8 @@
 	"projetos.item3.name": "Title",
 	"projetos.item3.copy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
 	"analog.title": "Analog",
-	"analog.subtitle": "Memories in film, grain, and light."
+	"analog.subtitle": "Memories in film, grain, and light.",
+	"pdb.intro": "One of my most recent professional challenges was capturing the 4th edition of Porto Design Biennale, themed Time is Present. Designing the Common - a project with a real and lasting impact on communities. This selection is a small glimpse of what the Biennale was.",
+	"falcon.copy.col1": "In this photobook, I aim to explore the intense relationship that Pedro Oliveira has with the sea. A relationship of such intensity that, as well as living the sea-having sailed to different parts of the world and competing in regattas every month with his boat Falcon Quest-he also lives on the sea... on his boat, which brings him more comfort than any house could.",
+	"falcon.copy.col2": "For Pedro, sleeping on the boat is like when he was a child and fell asleep in his mother's arms... for him, \"it's the same swaying\". When he returns to the boat after a few days, he \"gives it a little pat\" to greet it.<br><br>\"It's like a friend... it's an extension of yourself. It's a body and you're the heart that pumps the engine and keeps it going.\""
 }

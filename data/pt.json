@@ -30,11 +30,11 @@
 	"fotografia.title": "Fotografia",
 	"fotografia.subtitle": "Registos entre o cotidiano e o instante.",
 	"fotografia.item1.name": "Analógico",
-	"fotografia.item1.copy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+	"fotografia.item1.copy": "A fotografia tem o poder de imortalizar momentos. Fotografar em película obriga-me a abrandar o ritmo, a estar mais presente, mais consciente do mundo à minha volta. Esta seleção reflete o meu interesse pelo quotidiano e pelos pequenos momentos - aqueles por que tantas vezes passamos sem reparar. Aqueles que, na minha opinião, merecem mais atenção.",
 	"fotografia.item2.name": "Falcon Quest",
-	"fotografia.item2.copy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+	"fotografia.item2.copy": "Uma viagem de barco que explora a cumplicidade entre o homem e o mar.",
 	"fotografia.item3.name": "Porto Design Biennale",
-	"fotografia.item3.copy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+	"fotografia.item3.copy": "O Tempo é Presente. Desenhar o Comum.",
 	"projetos.title": "Mais Projetos",
 	"projetos.subtitle": "Outras exploracoes criativas e colaboracoes.",
 	"projetos.item1.name": "T1 Jams",
@@ -44,5 +44,8 @@
 	"projetos.item3.name": "Nome",
 	"projetos.item3.copy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
 	"analog.title": "Analógico",
-	"analog.subtitle": "Memórias em película, grão e luz."
+	"analog.subtitle": "Memórias em película, grão e luz.",
+	"pdb.intro": "Um dos meus desafios profissionais mais recentes foi documentar a 4.ª edição da Porto Design Biennale, com o tema \"O Tempo é Presente. Desenhar o Comum.\" - um projeto com um impacto real e duradouro nas comunidades. Esta seleção é um pequeno vislumbre do que foi a Biennale.",
+	"falcon.copy.col1": "Neste photobook pretendo explorar a intensa relação que Pedro Oliveira tem com o mar. Relação de tal intensidade que para além de viver o mar, tendo velejado por diferentes partes do mundo e competindo em regatas todos os meses com o seu barco Falcon Quest, também vive no mar... no seu barco, que para ele lhe trás mais conforto do que qualquer casa.",
+	"falcon.copy.col2": "Para Pedro, dormir no barco é como quando era criança e adormecia nos braços da mãe... para ele \"é o mesmo balançar\". Quando volta ao barco depois de alguns dias \"dá-lhe uma palmadinha\" para o cumprimentar.<br><br>\"É como um amigo... é uma extensão de ti. É um corpo e tu és o coração que bombeia a máquina e o faz andar.\""
 }

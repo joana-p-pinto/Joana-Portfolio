@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script>
+		(() => {
+			const stored = localStorage.getItem("joana-theme");
+			const dark = stored ? stored === "dark" : window.matchMedia("(prefers-color-scheme: dark)").matches;
+			if (dark) document.documentElement.classList.add("theme-dark");
+		})();
+	</script>
+	<title>Coppelia 2.0 | Joana Pinto</title>
+	<link rel="icon" type="image/png" href="../assets/icons/favicon.png">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="../styles/styles.css">
+</head>
+<body class="coppelia-2-0-page">
+	<div class="page">
+		<header class="site-header filmes-header">
+			<div class="brand filmes-brand">
+				<a href="../index.html" class="brand-home-link">
+					<div class="brand-name" data-i18n-html="brand.name">Joana<br>Pinto</div>
+				</a>
+				<nav class="primary-nav">
+					<a href="filmes.html" data-i18n="nav.filmes">Filmes</a>
+					<a href="fotografia.html" data-i18n="nav.fotografia">Fotografia</a>
+					<a href="mais-projetos.html" data-i18n="nav.projetos">Mais Projetos</a>
+					<a href="#" data-cv-download data-i18n="nav.cv">CV</a>
+				</nav>
+			</div>
+			<div class="header-tools">
+				<button class="theme-toggle" type="button" aria-label="Toggle theme" data-theme-toggle>
+					<img src="../assets/icons/sun.png" alt="" class="icon icon-sun" aria-hidden="true">
+					<img src="../assets/icons/moon.png" alt="" class="icon icon-moon" aria-hidden="true">
+				</button>
+				<button class="lang-toggle" type="button" data-lang-toggle>PT<span aria-hidden="true">&bull;</span>EN</button>
+			</div>
+		</header>
+
+		<main class="project-gallery-page" id="coppelia-2-0">
+			<h1 class="films-list-title">Coppelia 2.0</h1>
+			<section class="analog-gallery">
+				<img src="../assets/images/placeholder1.jpg" alt="Coppelia 2.0 1" class="gallery-image" data-gallery-image loading="lazy" decoding="async">
+				<img src="../assets/images/placeholder2.jpg" alt="Coppelia 2.0 2" class="gallery-image" data-gallery-image loading="lazy" decoding="async">
+				<img src="../assets/images/placeholder3.jpg" alt="Coppelia 2.0 3" class="gallery-image" data-gallery-image loading="lazy" decoding="async">
+				<img src="../assets/images/placeholder4.jpg" alt="Coppelia 2.0 4" class="gallery-image" data-gallery-image loading="lazy" decoding="async">
+			</section>
+		</main>
+		<footer class="site-footer">
+			<p class="site-footer-item">Email • joanapinto.mpp@gmail.com</p>
+			<p class="site-footer-item">Instagram • @joana.ppinto</p>
+		</footer>
+	</div>
+	<script src="../js/main.js"></script>
+</body>
+</html>
