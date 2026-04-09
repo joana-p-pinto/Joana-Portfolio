@@ -380,9 +380,9 @@ html.theme-dark .home-page .about-columns {
 }
 
 .fotografia-page .film-copy {
-	column-count: 2;
-	column-gap: 18px;
-	max-width: 560px;
+	column-count: 1;
+	max-width: 580px;
+	margin-left: 68px;
 }
 
 .film-copy-two-columns {
