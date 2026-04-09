@@ -432,19 +432,6 @@ html.theme-dark .home-page .about-columns {
 	justify-self: start;
 }
 
-.home-page .site-footer {
-	grid-template-columns: 1fr;
-	gap: 12px;
-}
-
-.home-page .site-footer .site-footer-item:first-child {
-	grid-column: auto;
-}
-
-.home-page .site-footer .site-footer-item:last-child {
-	grid-column: auto;
-}
-
 .project-gallery-page {
 	margin-top: 72px;
 	padding-bottom: 36px;
