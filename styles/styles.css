@@ -274,6 +274,10 @@ html.theme-dark .home-page .about-columns {
 	border-bottom: 0;
 }
 
+.fotografia-page .films-list {
+	padding-bottom: 28px;
+}
+
 .films-list-title {
 	font-family: "Instrument Serif", "Times New Roman", serif;
 	font-size: 64px;
@@ -359,6 +363,18 @@ html.theme-dark .home-page .about-columns {
 	letter-spacing: 0;
 	max-width: 340px;
 	margin-left: 220px;
+}
+
+.fotografia-page .film-copy {
+	column-count: 2;
+	column-gap: 18px;
+	max-width: 560px;
+}
+
+.film-copy-two-columns {
+	column-count: 2;
+	column-gap: 18px;
+	max-width: 560px;
 }
 
 .site-footer {
@@ -490,16 +506,8 @@ html.theme-dark .home-page .about-columns {
 	max-width: none;
 }
 
-.film-detail-copy[data-i18n-html="filmes.item1.copy.col2"],
-.film-detail-copy[data-i18n-html="filmes.item2.copy.col2"],
-.film-detail-copy[data-i18n-html="filmes.item3.copy.col2"] {
-	display: flex;
-	flex-direction: column;
-	height: 100%;
-}
-
 .film-detail-credits {
-	margin-top: auto;
+	margin-top: 16px;
 	font-family: "Instrument Serif", "Times New Roman", serif;
 	font-size: 22px;
 	line-height: 1.05;
@@ -817,6 +825,16 @@ body.theme-animated * {
 		line-height: 1.2;
 	}
 
+	.fotografia-page .film-copy {
+		column-count: 1;
+		max-width: 300px;
+	}
+
+	.film-copy-two-columns {
+		column-count: 1;
+		max-width: 300px;
+	}
+
 	.film-detail-title {
 		font-size: 42px;
 	}
@@ -944,6 +962,16 @@ body.theme-animated * {
 		max-width: none;
 		margin-left: 0;
 		line-height: 1.15;
+	}
+
+	.fotografia-page .film-copy {
+		column-count: 1;
+		max-width: none;
+	}
+
+	.film-copy-two-columns {
+		column-count: 1;
+		max-width: none;
 	}
 
 	.film-detail {
