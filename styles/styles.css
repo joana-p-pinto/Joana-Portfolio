@@ -306,19 +306,6 @@ html.theme-dark .home-page .about-columns {
 	object-fit: cover;
 }
 
-.preview-zoom-wrap {
-	width: 100%;
-	height: 176px;
-	overflow: hidden;
-}
-
-.preview-zoom-image {
-	width: 100%;
-	height: 100%;
-	object-fit: cover;
-	transform: scale(1.14);
-	transform-origin: center;
-}
 
 .filmes-page .film-thumb {
 	height: auto;
@@ -822,9 +809,6 @@ body.theme-animated * {
 		height: 160px;
 	}
 
-	.preview-zoom-wrap {
-		height: 160px;
-	}
 
 	.film-copy {
 		font-size: 15px;
@@ -950,9 +934,6 @@ body.theme-animated * {
 		height: 230px;
 	}
 
-	.preview-zoom-wrap {
-		height: 230px;
-	}
 
 	.film-name {
 		font-size: 38px;
