@@ -567,6 +567,37 @@ html.theme-dark .home-page .about-columns {
 	line-height: 1;
 }
 
+.ppd-page .ppd-hero {
+	display: grid;
+	grid-template-columns: minmax(0, 1.15fr) minmax(320px, 0.85fr);
+	gap: 28px;
+	align-items: start;
+	margin-top: 14px;
+	margin-bottom: 44px;
+}
+
+.ppd-page .ppd-capa-wrap {
+	margin-top: 0;
+	width: 100%;
+	max-width: none;
+}
+
+.ppd-page .ppd-meta {
+	margin-top: 0;
+	grid-template-columns: 1fr;
+	gap: 18px;
+}
+
+.ppd-page .ppd-copy-columns {
+	grid-template-columns: 1fr;
+	gap: 16px;
+}
+
+.ppd-page .ppd-copy-columns .film-detail-copy {
+	font-size: 18px;
+	line-height: 1.28;
+}
+
 .back-to-top {
 	position: fixed;
 	right: 22px;
@@ -976,6 +1007,16 @@ body.theme-animated * {
 		max-width: 100%;
 	}
 
+	.ppd-page .ppd-hero {
+		grid-template-columns: 1fr;
+		gap: 18px;
+		margin-bottom: 32px;
+	}
+
+	.ppd-page .ppd-copy-columns .film-detail-copy {
+		font-size: 16px;
+	}
+
 	.film-detail-copy-columns {
 		grid-template-columns: 1fr;
 	}
@@ -1195,6 +1236,16 @@ body.theme-animated * {
 		font-size: 15px;
 		max-width: none;
 		line-height: 1.2;
+	}
+
+	.ppd-page .ppd-hero {
+		margin-top: 10px;
+		gap: 14px;
+		margin-bottom: 24px;
+	}
+
+	.ppd-page .ppd-copy-columns .film-detail-copy {
+		font-size: 15px;
 	}
 
 	.film-detail-copy-columns {

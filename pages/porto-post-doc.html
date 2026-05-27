@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script>
+		(() => {
+			const stored = localStorage.getItem("joana-theme");
+			const dark = stored ? stored === "dark" : window.matchMedia("(prefers-color-scheme: dark)").matches;
+			if (dark) document.documentElement.classList.add("theme-dark");
+		})();
+	</script>
+	<title>Porto/Post/Doc | Joana Pinto</title>
+	<link rel="icon" type="image/png" href="../assets/icons/favicon.png">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="../styles/styles.css">
+</head>
+<body class="project-gallery-page-body">
+	<div class="page">
+		<header class="site-header filmes-header">
+			<div class="brand filmes-brand">
+				<a href="../index.html" class="brand-home-link">
+					<div class="brand-name" data-i18n-html="brand.name">Joana<br>Pinto</div>
+				</a>
+				<nav class="primary-nav">
+					<a href="filmes.html" data-i18n="nav.filmes">Filmes</a>
+					<a href="fotografia.html" data-i18n="nav.fotografia">Fotografia</a>
+					<a href="mais-projetos.html" data-i18n="nav.projetos">Mais Projetos</a>
+					<a href="#" data-cv-download data-i18n="nav.cv">CV</a>
+				</nav>
+			</div>
+			<div class="header-tools">
+				<button class="theme-toggle" type="button" aria-label="Toggle theme" data-theme-toggle>
+					<img src="../assets/icons/sun.png" alt="" class="icon icon-sun" aria-hidden="true">
+					<img src="../assets/icons/moon.png" alt="" class="icon icon-moon" aria-hidden="true">
+				</button>
+				<button class="lang-toggle" type="button" data-lang-toggle>PT<span aria-hidden="true">&bull;</span>EN</button>
+			</div>
+		</header>
+
+		<main class="project-gallery-page ppd-page" id="porto-post-doc">
+			<section class="ppd-hero">
+				<div class="film-detail-capa-wrap ppd-capa-wrap">
+					<img src="../assets/images/ppd/CAPA.jpg" alt="Porto/Post/Doc cover" class="film-detail-capa" data-gallery-image loading="lazy" decoding="async">
+				</div>
+				<div class="film-detail-meta ppd-meta">
+					<div>
+						<h1 class="film-detail-title" data-i18n="ppd.title">Porto/Post/Doc</h1>
+						<p class="project-subtitle" data-i18n="ppd.subtitle">Lorem ipsum</p>
+					</div>
+					<div class="film-detail-copy-columns ppd-copy-columns">
+						<p class="film-detail-copy" data-i18n="ppd.copy.col1">
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+						</p>
+						<p class="film-detail-copy" data-i18n-html="ppd.copy.col2">
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+						</p>
+					</div>
+				</div>
+			</section>
+			<section class="analog-gallery" aria-label="Porto Post Doc gallery">
+				<img src="../assets/images/ppd/1.jpg" alt="Porto/Post/Doc 1" class="gallery-image" data-gallery-image loading="lazy" decoding="async">
+				<img src="../assets/images/ppd/2.jpg" alt="Porto/Post/Doc 2" class="gallery-image" data-gallery-image loading="lazy" decoding="async">
+				<img src="../assets/images/ppd/3.jpg" alt="Porto/Post/Doc 3" class="gallery-image" data-gallery-image loading="lazy" decoding="async">
+				<img src="../assets/images/ppd/4.jpg" alt="Porto/Post/Doc 4" class="gallery-image" data-gallery-image loading="lazy" decoding="async">
+				<img src="../assets/images/ppd/5.jpg" alt="Porto/Post/Doc 5" class="gallery-image" data-gallery-image loading="lazy" decoding="async">
+				<img src="../assets/images/ppd/6.jpg" alt="Porto/Post/Doc 6" class="gallery-image" data-gallery-image loading="lazy" decoding="async">
+				<img src="../assets/images/ppd/7.jpg" alt="Porto/Post/Doc 7" class="gallery-image" data-gallery-image loading="lazy" decoding="async">
+				<img src="../assets/images/ppd/8.jpg" alt="Porto/Post/Doc 8" class="gallery-image" data-gallery-image loading="lazy" decoding="async">
+				<img src="../assets/images/ppd/9.jpg" alt="Porto/Post/Doc 9" class="gallery-image" data-gallery-image loading="lazy" decoding="async">
+			</section>
+		</main>
+		<footer class="site-footer">
+			<p class="site-footer-item">Email • <a href="mailto:joanapinto.mpp@gmail.com">joanapinto.mpp@gmail.com</a></p>
+			<p class="site-footer-item">Instagram • <a href="https://www.instagram.com/joana.ppinto/" target="_blank" rel="noopener noreferrer">@joana.ppinto</a></p>
+		</footer>
+	</div>
+	<script src="../js/main.js"></script>
+</body>
+</html>
