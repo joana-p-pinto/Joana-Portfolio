@@ -356,6 +356,10 @@ html.theme-dark .home-page .about-columns {
 	line-height: 1.05;
 }
 
+.t1-jams-page .project-subtitle {
+	margin-bottom: 12px;
+}
+
 .filmes-page .project-subtitle {
 	white-space: nowrap;
 }
@@ -715,6 +719,11 @@ body.theme-dark .back-to-top-icon.light {
 	grid-template-columns: repeat(2, minmax(0, 1fr));
 	gap: 18px;
 	align-items: start;
+}
+
+.t1-jams-page .project-copy-columns {
+	margin-top: 0;
+	margin-bottom: 44px;
 }
 
 .project-copy {
