@@ -29,7 +29,7 @@ body {
 	min-height: 100vh;
 	display: flex;
 	line-height: 1.6;
-	transition: background-color var(--theme-transition), color var(--theme-transition);
+	transition: background-color var(--theme-transition);
 }
 
 body.theme-dark,
@@ -847,7 +847,7 @@ body.theme-dark .coppelia-video-placeholder-label {
 
 body.theme-animated,
 body.theme-animated * {
-	transition: color var(--theme-transition), border-color var(--theme-transition), background-color var(--theme-transition), opacity var(--theme-transition), outline-color var(--theme-transition);
+	transition: background-color var(--theme-transition);
 }
 
 @media (max-width: 900px) {
@@ -923,6 +923,26 @@ body.theme-animated * {
 
 	.film-row {
 		grid-template-columns: 220px minmax(120px, 140px) 1fr;
+	}
+
+	.filmes-page .film-row {
+		grid-template-columns: 200px minmax(0, 1fr);
+		gap: 18px;
+	}
+
+	.filmes-page .film-thumb {
+		height: auto;
+		aspect-ratio: 618 / 301;
+	}
+
+	.filmes-page .project-title-group {
+		grid-column: 2;
+	}
+
+	.filmes-page .film-copy {
+		grid-column: 2;
+		margin-left: 0;
+		max-width: none;
 	}
 
 	.film-thumb {
@@ -1004,17 +1024,50 @@ body.theme-animated * {
 
 @media (max-width: 640px) {
 	.page {
-		padding: 10px 20px 56px;
+		padding: 10px 18px 52px;
 	}
 
 	.brand {
 		flex-direction: column;
 		align-items: flex-start;
+		gap: 12px;
+	}
+
+	.brand-name {
+		font-size: 42px;
+		line-height: 0.85;
+	}
+
+	.primary-nav {
+		font-size: 16px;
+		line-height: 1.12;
+		gap: 2px;
 	}
 
 	.header-tools {
 		width: 100%;
 		justify-content: space-between;
+		gap: 14px;
+	}
+
+	.lang-toggle {
+		font-size: 22px;
+	}
+
+	.theme-toggle {
+		width: 26px;
+		height: 26px;
+	}
+
+	.theme-toggle .icon {
+		width: 24px;
+		height: 24px;
+	}
+
+	.theme-toggle .icon-moon {
+		width: 20px;
+		height: 20px;
+		inset: 3px;
 	}
 
 	.about-columns {
@@ -1033,10 +1086,6 @@ body.theme-animated * {
 		font-size: 16px;
 	}
 
-	.page-title {
-		font-size: 44px;
-	}
-
 	.filmes-brand {
 		gap: 10px;
 	}
@@ -1047,34 +1096,55 @@ body.theme-animated * {
 
 	.film-project-page,
 	.project-gallery-page {
-		margin-top: 44px;
+		margin-top: 36px;
 	}
 
 	.films-list-title {
-		font-size: 36px;
-		margin-bottom: 8px;
+		font-size: 32px;
+		margin-bottom: 10px;
 	}
 
 	.project-subtitle {
-		font-size: 18px;
+		font-size: 16px;
 	}
 
 	.film-row {
 		grid-template-columns: 1fr;
-		gap: 10px;
+		gap: 8px;
+		padding: 10px 0;
+	}
+
+	.filmes-page .film-row {
+		grid-template-columns: 1fr;
+		gap: 8px;
+	}
+
+	.filmes-page .project-title-group,
+	.filmes-page .film-copy {
+		grid-column: auto;
 	}
 
 	.film-thumb {
-		height: 230px;
+		height: 200px;
 	}
 
 
 	.film-name {
-		font-size: 38px;
+		font-size: 32px;
+		white-space: normal;
+	}
+
+	.filmes-page .film-name {
+		font-size: 32px;
+		white-space: normal;
+	}
+
+	.filmes-page .project-subtitle {
+		white-space: normal;
 	}
 
 	.film-copy {
-		font-size: 16px;
+		font-size: 15px;
 		max-width: none;
 		margin-left: 0;
 		line-height: 1.15;
@@ -1090,17 +1160,46 @@ body.theme-animated * {
 		max-width: none;
 	}
 
+	.project-title-group {
+		gap: 4px;
+	}
+
+	.project-copy-columns {
+		margin: 12px 0 22px;
+		gap: 12px;
+	}
+
+	.project-copy {
+		font-size: 16px;
+		line-height: 1.35;
+	}
+
+	.project-gallery-intro {
+		margin: 12px 0 22px;
+		font-size: 16px;
+	}
+
 	.film-detail {
+		margin-top: 22px;
+	}
+
+	.film-detail-meta {
 		margin-top: 26px;
 	}
 
 	.film-detail-title {
-		font-size: 38px;
+		font-size: 32px;
 	}
 
 	.film-detail-copy {
 		font-size: 15px;
+		max-width: none;
 		line-height: 1.2;
+	}
+
+	.film-detail-copy-columns {
+		grid-template-columns: 1fr;
+		gap: 12px;
 	}
 
 	.film-detail-thumbs {
@@ -1109,13 +1208,33 @@ body.theme-animated * {
 
 	.film-detail-stills {
 		grid-template-columns: 1fr;
+		gap: 12px;
+	}
+
+	.film-detail-credits {
+		font-size: 18px;
+		margin-top: 12px;
+	}
+
+	.film-detail-capa-wrap {
+		margin-top: 36px;
+		width: 100%;
+		max-width: 100%;
+	}
+
+	.film-detail-backstage {
+		margin-top: 36px;
+	}
+
+	.film-detail-subsection-title {
+		font-size: 32px;
 	}
 
 	.site-footer {
-		font-size: 16px;
-		line-height: 1.2;
+		font-size: 15px;
+		line-height: 1.25;
 		grid-template-columns: 1fr;
-		gap: 10px;
+		gap: 8px;
 	}
 
 	.home-page .site-footer {
@@ -1129,10 +1248,38 @@ body.theme-animated * {
 
 	.site-footer-item {
 		white-space: normal;
+		overflow-wrap: anywhere;
 	}
 
 	.analog-gallery {
 		grid-template-columns: 1fr;
+		gap: 12px;
+	}
+
+	.coppelia-video-stack {
+		gap: 12px;
+		margin-bottom: 12px;
+	}
+
+	.coppelia-video-grid {
+		grid-template-columns: 1fr;
+		gap: 12px;
+	}
+
+	.lightbox {
+		padding: 16px;
+	}
+
+	.lightbox-image,
+	.lightbox-video {
+		max-width: 92vw;
+		max-height: 72vh;
+	}
+
+	.lightbox-empty {
+		min-width: min(600px, 84vw);
+		min-height: min(340px, 56vw);
+		font-size: 18px;
 	}
 
 	.lightbox-control {
@@ -1150,5 +1297,66 @@ body.theme-animated * {
 	.back-to-top-icon {
 		width: 38px;
 		height: 38px;
+	}
+}
+
+@media (max-width: 480px) {
+	.page {
+		padding: 8px 16px 48px;
+	}
+
+	.brand-name {
+		font-size: 36px;
+	}
+
+	.primary-nav {
+		font-size: 15px;
+	}
+
+	.films-list {
+		margin-top: 54px;
+	}
+
+	.films-list-title {
+		font-size: 30px;
+	}
+
+	.film-name {
+		font-size: 30px;
+	}
+
+	.film-copy {
+		font-size: 14px;
+	}
+
+	.film-detail-title {
+		font-size: 30px;
+	}
+
+	.film-detail-copy,
+	.project-copy,
+	.project-gallery-intro {
+		font-size: 15px;
+	}
+
+	.film-thumb {
+		height: 180px;
+	}
+
+	.site-footer {
+		font-size: 14px;
+	}
+
+	.lightbox-control.prev {
+		left: 10px;
+	}
+
+	.lightbox-control.next {
+		right: 10px;
+	}
+
+	.lightbox-control.close {
+		top: 10px;
+		right: 10px;
 	}
 }

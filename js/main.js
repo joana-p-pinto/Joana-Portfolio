@@ -10,6 +10,18 @@ const cvDownloadLinks = document.querySelectorAll("[data-cv-download]");
 
 let dictionaries = { pt: {}, en: {} };
 let currentLang = DEFAULT_LANG;
+let themeAnimationTimer = null;
+
+function animateThemeBackground() {
+	document.body.classList.add("theme-animated");
+	if (themeAnimationTimer) {
+		window.clearTimeout(themeAnimationTimer);
+	}
+	themeAnimationTimer = window.setTimeout(() => {
+		document.body.classList.remove("theme-animated");
+		themeAnimationTimer = null;
+	}, 260);
+}
 
 function setTheme(theme, animate = true) {
 	if (!animate) {
@@ -40,11 +52,11 @@ function getInitialTheme() {
 
 let currentTheme = getInitialTheme();
 setTheme(currentTheme, false);
-document.body.classList.add("theme-animated");
 
 themeToggleButtons.forEach((button) => {
 	button.addEventListener("click", () => {
 		currentTheme = currentTheme === "dark" ? "light" : "dark";
+		animateThemeBackground();
 		setTheme(currentTheme);
 		localStorage.setItem(THEME_KEY, currentTheme);
 	});
