@@ -441,6 +441,19 @@ html.theme-dark .home-page .about-columns {
 	margin-bottom: 34px;
 }
 
+.falcon-quest-page .films-list-title {
+	margin-bottom: 34px;
+}
+
+.falcon-quest-page .project-copy-columns {
+	margin-top: 0;
+	margin-bottom: 44px;
+}
+
+.falcon-quest-page .analog-gallery {
+	margin-top: 0;
+}
+
 .film-project-page {
 	margin-top: 72px;
 }
