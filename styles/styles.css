@@ -288,10 +288,6 @@ html.theme-dark .home-page .about-columns {
 	border-bottom: 0;
 }
 
-.fotografia-page .films-list {
-	padding-bottom: 28px;
-}
-
 .films-list-title {
 	font-family: "Instrument Serif", "Times New Roman", serif;
 	font-size: 64px;
@@ -310,6 +306,7 @@ html.theme-dark .home-page .about-columns {
 	border-bottom: var(--rule-thickness) solid var(--ink);
 }
 
+
 .filmes-page .film-row {
 	grid-template-columns: 270px minmax(220px, 280px) minmax(240px, 1fr);
 }
@@ -325,7 +322,9 @@ html.theme-dark .home-page .about-columns {
 }
 
 
-.filmes-page .film-thumb {
+
+.filmes-page .film-thumb,
+.fotografia-page .film-thumb {
 	height: auto;
 	aspect-ratio: 618 / 301;
 }
@@ -337,7 +336,9 @@ html.theme-dark .home-page .about-columns {
 	line-height: 1;
 }
 
-.filmes-page .film-name {
+
+.filmes-page .film-name,
+.fotografia-page .film-name {
 	font-size: 42px;
 	white-space: nowrap;
 }
@@ -360,7 +361,9 @@ html.theme-dark .home-page .about-columns {
 	margin-bottom: 12px;
 }
 
-.filmes-page .project-subtitle {
+
+.filmes-page .project-subtitle,
+.fotografia-page .project-subtitle {
 	white-space: nowrap;
 }
 
@@ -381,12 +384,6 @@ html.theme-dark .home-page .about-columns {
 	letter-spacing: 0;
 	max-width: 340px;
 	margin-left: 220px;
-}
-
-.fotografia-page .film-copy {
-	column-count: 1;
-	max-width: 580px;
-	margin-left: 68px;
 }
 
 .film-copy-two-columns {
@@ -912,6 +909,22 @@ body.theme-animated * {
 		gap: 1px;
 	}
 
+	body.home-page main {
+		padding-bottom: 44px;
+	}
+
+	.filme-projeto-page main,
+	.project-gallery-page,
+	.projetos-page .films-list {
+		padding-bottom: 56px;
+	}
+
+	.header-tools {
+		width: 100%;
+		justify-content: space-between;
+		gap: 14px;
+	}
+
 	.about {
 		margin-top: 96px;
 		grid-template-columns: 1fr;
@@ -970,7 +983,17 @@ body.theme-animated * {
 		gap: 18px;
 	}
 
-	.filmes-page .film-thumb {
+	.fotografia-page .film-row {
+		grid-template-columns: 1fr;
+		gap: 8px;
+	}
+
+	.fotografia-page .films-list {
+		padding-bottom: 56px;
+	}
+
+	.filmes-page .film-thumb,
+	.fotografia-page .film-thumb {
 		height: auto;
 		aspect-ratio: 618 / 301;
 	}
@@ -995,11 +1018,6 @@ body.theme-animated * {
 		max-width: 300px;
 		margin-left: 130px;
 		line-height: 1.2;
-	}
-
-	.fotografia-page .film-copy {
-		column-count: 1;
-		max-width: 300px;
 	}
 
 	.film-copy-two-columns {
@@ -1051,11 +1069,13 @@ body.theme-animated * {
 	.site-footer {
 		font-size: 20px;
 		gap: 18px;
+		padding-top: 20px;
 	}
 
 	.home-page .site-footer {
 		grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
 		column-gap: 18px;
+		padding-top: 20px;
 	}
 
 	.home-page .site-footer .site-footer-item:first-child,
@@ -1078,9 +1098,10 @@ body.theme-animated * {
 	}
 
 	.brand {
-		flex-direction: column;
+		flex-direction: row;
 		align-items: flex-start;
-		gap: 12px;
+		gap: 14px;
+		flex-wrap: nowrap;
 	}
 
 	.brand-name {
@@ -1092,6 +1113,16 @@ body.theme-animated * {
 		font-size: 16px;
 		line-height: 1.12;
 		gap: 2px;
+	}
+
+	body.home-page main {
+		padding-bottom: 44px;
+	}
+
+	.filme-projeto-page main,
+	.project-gallery-page,
+	.projetos-page .films-list {
+		padding-bottom: 56px;
 	}
 
 	.header-tools {
@@ -1170,7 +1201,9 @@ body.theme-animated * {
 	}
 
 	.filmes-page .project-title-group,
-	.filmes-page .film-copy {
+	.filmes-page .film-copy,
+	.fotografia-page .project-title-group,
+	.fotografia-page .film-copy {
 		grid-column: auto;
 	}
 
@@ -1184,12 +1217,14 @@ body.theme-animated * {
 		white-space: normal;
 	}
 
-	.filmes-page .film-name {
+	.filmes-page .film-name,
+	.fotografia-page .film-name {
 		font-size: 32px;
 		white-space: normal;
 	}
 
-	.filmes-page .project-subtitle {
+	.filmes-page .project-subtitle,
+	.fotografia-page .project-subtitle {
 		white-space: normal;
 	}
 
@@ -1200,9 +1235,8 @@ body.theme-animated * {
 		line-height: 1.15;
 	}
 
-	.fotografia-page .film-copy {
-		column-count: 1;
-		max-width: none;
+	.fotografia-page .films-list {
+		padding-bottom: 56px;
 	}
 
 	.film-copy-two-columns {
@@ -1295,10 +1329,12 @@ body.theme-animated * {
 		line-height: 1.25;
 		grid-template-columns: 1fr;
 		gap: 8px;
+		padding-top: 20px;
 	}
 
 	.home-page .site-footer {
 		grid-template-columns: 1fr;
+		padding-top: 20px;
 	}
 
 	.home-page .site-footer .site-footer-item:first-child,
