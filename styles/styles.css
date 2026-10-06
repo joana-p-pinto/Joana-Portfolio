@@ -492,6 +492,19 @@ html.theme-dark .home-page .about-columns {
 	gap: 10px;
 }
 
+.film-detail-stills-scrollable {
+	display: flex;
+	overflow-x: auto;
+	scroll-snap-type: x proximity;
+	scrollbar-width: thin;
+}
+
+.film-detail-stills-scrollable .film-detail-still {
+	flex: 0 0 calc((100% - 30px) / 4);
+	min-width: 0;
+	scroll-snap-align: start;
+}
+
 .film-detail-still {
 	width: 100%;
 	aspect-ratio: 405 / 229;
@@ -1050,6 +1063,10 @@ body.theme-animated * {
 
 	.film-detail-stills {
 		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+
+	.film-detail-stills-scrollable .film-detail-still {
+		flex-basis: calc((100% - 12px) / 2);
 	}
 
 	.film-detail-meta {
